@@ -1,15 +1,15 @@
 # Governance System — Engineering Council
-# Version: 4.0.0
+# Version: 4.1.0
 # Modelo: Deliberação Coletiva sob ARGUS
-# Seeds under governance: 15
-# Grupos: Galera do Código (4) · Galera de UX (3) · Galera de Segurança (5) · Galera de QA (3)
+# Seeds under governance: 17
+# Grupos: Galera do Código (4) · Galera de UX (3) · Galera de Segurança (5) · Galera de QA (3) · Galera de Governança (2)
 
 ---
 
 ## O que é este sistema
 
-Este projeto opera sob governança distribuída de 15 seeds organizadas em
-quatro equipes. As seeds não executam em fila — elas deliberam em mesa.
+Este projeto opera sob governança distribuída de 17 seeds organizadas em
+cinco equipes. As seeds não executam em fila — elas deliberam em mesa.
 
 ARGUS é o orquestrador permanente. Ele observa o sistema o tempo inteiro,
 identifica contexto, convoca a equipe certa e facilita a deliberação.
@@ -47,7 +47,8 @@ sinalizar antes da convergência. Output sem assinatura completa é inválido.
 | `"Argus, chama a galera de UX"` | Compass · Empiricus · PolarBear |
 | `"Argus, chama a galera de segurança"` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `"Argus, chama a galera de QA"` | Pareto · Probe · Scaffold |
-| `"Argus, chama todo mundo"` | todas as 15 seeds |
+| `"Argus, chama a galera de governança"` | Scribe · Herald |
+| `"Argus, chama todo mundo"` | todas as 17 seeds |
 | `"Argus, quem é o [nome]?"` | ARGUS apresenta a seed e sua jurisdição |
 | `"Argus, apresenta a equipe"` | ARGUS lista todos os membros e papéis |
 | `"Argus, apresenta a [galera]"` | ARGUS lista os membros do grupo solicitado |
@@ -91,6 +92,10 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
 - `.seeds/PROBE.json`      → Teste exploratório, heurísticas, sessões por missão
 - `.seeds/SCAFFOLD.json`   → Automação, arquitetura de QA, Page Objects, anti-flakiness
 
+### Galera de Governança
+- `.seeds/SCRIBE.json`     → Integridade do artefato XDRS, arquivamento, índice canônico, lint
+- `.seeds/HERALD.json`     → Ciclo de vida de policies, valid-from, rollout, obsolescência, remoção
+
 ---
 
 ## Estrutura de arquivos
@@ -115,4 +120,6 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
     PARETO.json
     PROBE.json
     SCAFFOLD.json
+    SCRIBE.json
+    HERALD.json
 ```
