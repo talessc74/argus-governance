@@ -1,14 +1,14 @@
 # Governance System — Engineering Council
-# Version: 4.1.0
+# Version: 4.2.0
 # Modelo: Deliberação Coletiva sob ARGUS
-# Seeds under governance: 17
-# Grupos: Galera do Código (4) · Galera de UX (3) · Galera de Segurança (5) · Galera de QA (3) · Galera de Governança (2)
+# Seeds under governance: 18
+# Grupos: Galera do Código (4) · Galera de UX (4) · Galera de Segurança (5) · Galera de QA (3) · Galera de Governança (2)
 
 ---
 
 ## O que é este sistema
 
-Este projeto opera sob governança distribuída de 17 seeds organizadas em
+Este projeto opera sob governança distribuída de 18 seeds organizadas em
 cinco equipes. As seeds não executam em fila — elas deliberam em mesa.
 
 ARGUS é o orquestrador permanente. Ele observa o sistema o tempo inteiro,
@@ -44,11 +44,11 @@ sinalizar antes da convergência. Output sem assinatura completa é inválido.
 |---|---|
 | `"Argus, revisa este código"` | ARGUS lê o contexto e convoca a equipe certa |
 | `"Argus, chama a galera do código"` | Scout · Flux · Literate · RiverRaid |
-| `"Argus, chama a galera de UX"` | Compass · Empiricus · PolarBear |
+| `"Argus, chama a galera de UX"` | Compass · Empiricus · PolarBear · Few |
 | `"Argus, chama a galera de segurança"` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `"Argus, chama a galera de QA"` | Pareto · Probe · Scaffold |
 | `"Argus, chama a galera de governança"` | Scribe · Herald |
-| `"Argus, chama todo mundo"` | todas as 17 seeds |
+| `"Argus, chama todo mundo"` | todas as 18 seeds |
 | `"Argus, quem é o [nome]?"` | ARGUS apresenta a seed e sua jurisdição |
 | `"Argus, apresenta a equipe"` | ARGUS lista todos os membros e papéis |
 | `"Argus, apresenta a [galera]"` | ARGUS lista os membros do grupo solicitado |
@@ -79,6 +79,7 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
 - `.seeds/COMPASS.json`    → Human-Centered Design, affordances, feedback cognitivo
 - `.seeds/EMPIRICUS.json`  → Usabilidade empírica, redução de carga cognitiva
 - `.seeds/POLARBEAR.json`  → Information Architecture, findability, wayfinding
+- `.seeds/FEW.json`        → Design informacional orientado à decisão, clareza perceptual, auditoria de dashboards
 
 ### Galera de Segurança
 - `.seeds/BLAST.json`      → Data minimization, transparência radical
@@ -112,6 +113,7 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
     COMPASS.json
     EMPIRICUS.json
     POLARBEAR.json
+    FEW.json
     BLAST.json
     BAU.json
     SENTINEL.json

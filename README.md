@@ -1,7 +1,7 @@
-# ARGUS Governance v4.0.0
+# ARGUS Governance v4.2.0
 
 Repositório central da governança distribuída ARGUS.
-Contém as 15 seeds, o orquestrador e o instalador para qualquer projeto.
+Contém as 18 seeds, o orquestrador e o instalador para qualquer projeto.
 
 ---
 
@@ -74,6 +74,7 @@ argus-governance/
     COMPASS.json                   ← Human-Centered Design
     EMPIRICUS.json                 ← Usabilidade empírica
     POLARBEAR.json                 ← Information Architecture
+    FEW.json                       ← Design informacional orientado à decisão
     BLAST.json                     ← Data minimization
     BAU.json                       ← Compliance contínuo
     SENTINEL.json                  ← Zero Trust
@@ -82,6 +83,8 @@ argus-governance/
     PARETO.json                    ← Cobertura de risco
     PROBE.json                     ← Teste exploratório
     SCAFFOLD.json                  ← Arquitetura de QA
+    SCRIBE.json                    ← Integridade do artefato XDRS
+    HERALD.json                    ← Ciclo de vida de policies
 ```
 
 ---
@@ -92,7 +95,8 @@ argus-governance/
 |---|---|
 | `Argus, revisa este código` | ARGUS convoca a equipe certa pelo contexto |
 | `Argus, chama a galera do código` | Scout · Flux · Literate · RiverRaid |
-| `Argus, chama a galera de UX` | Compass · Empiricus · PolarBear |
+| `Argus, chama a galera de UX` | Compass · Empiricus · PolarBear · Few |
 | `Argus, chama a galera de segurança` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `Argus, chama a galera de QA` | Pareto · Probe · Scaffold |
-| `Argus, chama todo mundo` | todas as 15 seeds |
+| `Argus, chama a galera de governança` | Scribe · Herald |
+| `Argus, chama todo mundo` | todas as 18 seeds |
