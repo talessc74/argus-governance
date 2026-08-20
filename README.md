@@ -74,6 +74,7 @@ argus-governance/
     COMPASS.json                   ← Human-Centered Design
     EMPIRICUS.json                 ← Usabilidade empírica
     POLARBEAR.json                 ← Information Architecture
+    FEW.json                       ← Design informacional orientado à decisão
     BLAST.json                     ← Data minimization
     BAU.json                       ← Compliance contínuo
     SENTINEL.json                  ← Zero Trust
@@ -92,7 +93,7 @@ argus-governance/
 |---|---|
 | `Argus, revisa este código` | ARGUS convoca a equipe certa pelo contexto |
 | `Argus, chama a galera do código` | Scout · Flux · Literate · RiverRaid |
-| `Argus, chama a galera de UX` | Compass · Empiricus · PolarBear |
+| `Argus, chama a galera de UX` | Compass · Empiricus · PolarBear · Few |
 | `Argus, chama a galera de segurança` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `Argus, chama a galera de QA` | Pareto · Probe · Scaffold |
 | `Argus, chama todo mundo` | todas as 15 seeds |
