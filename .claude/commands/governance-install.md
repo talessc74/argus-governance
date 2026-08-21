@@ -1,4 +1,4 @@
-Instale a governança ARGUS v4.0.0 neste repositório.
+Instale a governança ARGUS v4.2.0 neste repositório.
 
 Passos:
 
@@ -9,8 +9,10 @@ Passos:
    - .seeds/BLAST.json
    - .seeds/COMPASS.json
    - .seeds/EMPIRICUS.json
+   - .seeds/FEW.json
    - .seeds/FLUX.json
    - .seeds/GHOST.json
+   - .seeds/HERALD.json
    - .seeds/LITERATE.json
    - .seeds/PARETO.json
    - .seeds/POLARBEAR.json
@@ -18,6 +20,7 @@ Passos:
    - .seeds/RIVERRAID.json
    - .seeds/SCAFFOLD.json
    - .seeds/SCOUT.json
+   - .seeds/SCRIBE.json
    - .seeds/SENTINEL.json
    - .seeds/SOVEREIGN.json
 
@@ -25,7 +28,7 @@ Passos:
 
 3. Escreva todos os arquivos no repositório atual, mantendo a estrutura de pastas (.seeds/ na raiz).
 
-4. Faça commit com a mensagem: "chore: instalar governança ARGUS v4.0.0"
+4. Faça commit com a mensagem: "chore: instalar governança ARGUS v4.2.0"
 
 5. Faça push para o branch atual.
 
