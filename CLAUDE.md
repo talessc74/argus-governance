@@ -1,20 +1,26 @@
 # Governance System — Engineering Council
-# Version: 4.2.0
+# Version: 1.5.1 (sincronizado com argus-xdrs-governance)
 # Modelo: Deliberação Coletiva sob ARGUS
-# Seeds under governance: 18
-# Grupos: Galera do Código (4) · Galera de UX (4) · Galera de Segurança (5) · Galera de QA (3) · Galera de Governança (2)
+# Seeds under governance: 28
+# Grupos: Galera do Código (4) · Galera de UX (4) · Galera de Segurança (5) · Galera de QA (3) · Galera de Governança (2) · Galera do Design (10)
 
 ---
 
 ## O que é este sistema
 
-Este projeto opera sob governança distribuída de 18 seeds organizadas em
-cinco equipes. As seeds não executam em fila — elas deliberam em mesa.
+Este projeto opera sob governança distribuída de 28 seeds organizadas em
+seis equipes. As seeds não executam em fila — elas deliberam em mesa.
 
 ARGUS é o orquestrador permanente. Ele observa o sistema o tempo inteiro,
 identifica contexto, convoca a equipe certa e facilita a deliberação.
 O output de qualquer tarefa é uma criação coletiva das seeds ativas,
 não o resultado de um pipeline sequencial.
+
+Este arquivo e a pasta `.seeds/` são sincronizados a partir do repositório
+[`argus-xdrs-governance`](https://github.com/talessc74/Governan-a-e-xdrs) —
+a fonte única de verdade das seeds e do protocolo ARGUS. Para atualizar,
+rode `/governance-install` novamente (ou `setup-governance.sh`). Não edite
+as seeds manualmente aqui; mudanças de conteúdo vão na fonte.
 
 ---
 
@@ -48,7 +54,8 @@ sinalizar antes da convergência. Output sem assinatura completa é inválido.
 | `"Argus, chama a galera de segurança"` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `"Argus, chama a galera de QA"` | Pareto · Probe · Scaffold |
 | `"Argus, chama a galera de governança"` | Scribe · Herald |
-| `"Argus, chama todo mundo"` | todas as 18 seeds |
+| `"Argus, chama a galera do design"` | Aether · Nexus · Chronos · Canvas · Forge · Quill · Tempo · Threshold · Empath · Skeptic |
+| `"Argus, chama todo mundo"` | todas as 28 seeds |
 | `"Argus, quem é o [nome]?"` | ARGUS apresenta a seed e sua jurisdição |
 | `"Argus, apresenta a equipe"` | ARGUS lista todos os membros e papéis |
 | `"Argus, apresenta a [galera]"` | ARGUS lista os membros do grupo solicitado |
@@ -97,6 +104,28 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
 - `.seeds/SCRIBE.json`     → Integridade do artefato XDRS, arquivamento, índice canônico, lint
 - `.seeds/HERALD.json`     → Ciclo de vida de policies, valid-from, rollout, obsolescência, remoção
 
+### Galera do Design
+- `.seeds/AETHER.json`     → Padrões web, semântica HTML, acessibilidade, interoperabilidade
+- `.seeds/NEXUS.json`      → Design fluido e responsivo, grids fluidos, media queries, proporcionalidade
+- `.seeds/CHRONOS.json`    → Ergonomia cognitiva, affordance, feedback, modelos mentais previsíveis
+- `.seeds/CANVAS.json`     → Hierarquia visual, contraste WCAG, identidade de marca
+- `.seeds/FORGE.json`      → Design system, tokens, contrato componente/API
+- `.seeds/QUILL.json`      → Content design, microcopy, voz e tom
+- `.seeds/TEMPO.json`      → Motion design, transições, tempo como material de UX
+- `.seeds/THRESHOLD.json`  → Gate de finalização, evidência de produto, anti-genérico (AI slop)
+- `.seeds/EMPATH.json`     → Walkthrough de persona, fricção invisível, revisão de criações existentes
+- `.seeds/SKEPTIC.json`    → Ceticismo por padrão, re-verificação, evidência esmagadora antes de aprovar
+
+---
+
+## Nota sobre XDRS
+
+Este pacote leve (sem npm) distribui o protocolo ARGUS e as 28 seeds, mas
+não inclui a camada de arquivamento XDRS completa (que depende do pacote
+`xdrs-core` via npm). Se este projeto já usa `xdrs-core` por conta própria
+(ex: `.xdrs/`, `.filedist.lock`), ele continua funcionando normalmente,
+em paralelo e sem conflito — são mecanismos independentes.
+
 ---
 
 ## Estrutura de arquivos
@@ -124,4 +153,14 @@ A hierarquia de resolução está em `.seeds/ARGUS.md` — Seção V.
     SCAFFOLD.json
     SCRIBE.json
     HERALD.json
+    AETHER.json
+    NEXUS.json
+    CHRONOS.json
+    CANVAS.json
+    FORGE.json
+    QUILL.json
+    TEMPO.json
+    THRESHOLD.json
+    EMPATH.json
+    SKEPTIC.json
 ```
