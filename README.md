@@ -1,7 +1,17 @@
-# ARGUS Governance v4.2.0
+# ARGUS Governance (instalador sem npm)
 
-Repositório central da governança distribuída ARGUS.
-Contém as 18 seeds, o orquestrador e o instalador para qualquer projeto.
+Instalador leve da governança distribuída ARGUS, pra projetos que não usam
+Node/npm. As seeds e o protocolo ARGUS não vivem mais aqui — este
+repositório busca tudo ao vivo de
+[`argus-xdrs-governance`](https://github.com/talessc74/Governan-a-e-xdrs),
+a fonte única de verdade. Isso significa que qualquer correção ou seed
+nova feita lá chega automaticamente aqui, sem precisar duplicar nada.
+
+Se o seu projeto **usa** Node/npm, prefira instalar `argus-xdrs-governance`
+direto (`npm install argus-xdrs-governance && npx argus-xdrs-governance
+install`) — ele também traz a camada XDRS completa de arquivamento de
+decisões. Este repositório aqui é só a porta de entrada pra quem não tem
+Node no projeto.
 
 ---
 
@@ -22,17 +32,17 @@ Pronto. O comando `/governance-install` agora está disponível em **todos os se
 
 ## Como usar em um projeto novo
 
-1. Crie o repositório do novo projeto no GitHub
-2. Abra-o no Claude Code (claude.ai/code)
-3. No chat, digite:
+1. Abra o projeto no Claude Code (claude.ai/code)
+2. No chat, digite:
 
 ```
 /governance-install
 ```
 
 O Claude irá:
-- Buscar todos os arquivos de governança deste repositório
-- Copiar `CLAUDE.md` e `.seeds/` para a raiz do projeto
+- Buscar `CLAUDE.md` deste repositório e as 28 seeds + o protocolo `ARGUS.md`
+  direto de `argus-xdrs-governance` (sempre a versão mais atual do `main`)
+- Escrever tudo na raiz do projeto, fazendo backup de um `CLAUDE.md` anterior
 - Fazer commit e push automaticamente
 
 A partir do próximo chat nesse repositório, a governança ARGUS já estará ativa.
@@ -41,17 +51,26 @@ A partir do próximo chat nesse repositório, a governança ARGUS já estará at
 
 ## Como atualizar a governança em projetos existentes
 
-Quando você alterar seeds ou o `CLAUDE.md` aqui no `argus-governance`:
+Basta rodar `/governance-install` de novo — como ele busca ao vivo da fonte,
+sempre traz o que houver de mais atual, sem você precisar fazer nada aqui
+neste repositório antes.
+
+Alternativa via terminal (sem passar pelo Claude Code):
 
 ```bash
-# Atualize o repositório local
-cd ~/argus-governance && git pull
-
-# Reinstale em cada projeto (sobrescreve, faz backup do CLAUDE.md anterior)
+cd ~/argus-governance && git pull   # atualiza o CLAUDE.md leve, se mudou
 bash ~/argus-governance/setup-governance.sh /caminho/do/projeto
 ```
 
-Ou abra o projeto no Claude Code e rode `/governance-install` novamente.
+O script busca as seeds e o `ARGUS.md` direto de `argus-xdrs-governance`
+via `curl` a cada execução — nunca de uma cópia local antiga.
+
+---
+
+## Por que existem dois repositórios
+
+- **[`argus-xdrs-governance`](https://github.com/talessc74/Governan-a-e-xdrs)** — a fonte única de verdade. Todas as seeds, o protocolo ARGUS completo e a camada XDRS de arquivamento de decisões vivem lá. Se você vai *editar* uma seed ou o protocolo, é lá que mexe.
+- **`argus-governance`** (este repositório) — só um instalador alternativo, pra projetos sem Node/npm. Não guarda seeds próprias; sempre busca da fonte acima.
 
 ---
 
@@ -60,32 +79,14 @@ Ou abra o projeto no Claude Code e rode `/governance-install` novamente.
 ```
 argus-governance/
   README.md                        ← este arquivo
-  CLAUDE.md                        ← copiado para cada projeto
-  setup-governance.sh              ← instalador via terminal
+  CLAUDE.md                        ← documento de entrada leve, mantido aqui
+  setup-governance.sh              ← instalador via terminal (busca seeds via curl)
   .claude/
     commands/
       governance-install.md        ← slash command /governance-install
-  .seeds/
-    ARGUS.md                       ← orquestrador
-    SCOUT.json                     ← Clean Code, TDD
-    FLUX.json                      ← Evolutionary Design
-    LITERATE.json                  ← Algoritmos, narrativa
-    RIVERRAID.json                 ← Recursos finitos
-    COMPASS.json                   ← Human-Centered Design
-    EMPIRICUS.json                 ← Usabilidade empírica
-    POLARBEAR.json                 ← Information Architecture
-    FEW.json                       ← Design informacional orientado à decisão
-    BLAST.json                     ← Data minimization
-    BAU.json                       ← Compliance contínuo
-    SENTINEL.json                  ← Zero Trust
-    SOVEREIGN.json                 ← Identity, consentimento
-    GHOST.json                     ← Attacker mindset
-    PARETO.json                    ← Cobertura de risco
-    PROBE.json                     ← Teste exploratório
-    SCAFFOLD.json                  ← Arquitetura de QA
-    SCRIBE.json                    ← Integridade do artefato XDRS
-    HERALD.json                    ← Ciclo de vida de policies
 ```
+
+(Não há mais `.seeds/*.json` neste repositório — eles são sempre buscados ao vivo de `argus-xdrs-governance` no momento da instalação, pra nunca ficarem desatualizados.)
 
 ---
 
@@ -99,4 +100,5 @@ argus-governance/
 | `Argus, chama a galera de segurança` | Blast · BAU · Sentinel · Sovereign · Ghost |
 | `Argus, chama a galera de QA` | Pareto · Probe · Scaffold |
 | `Argus, chama a galera de governança` | Scribe · Herald |
-| `Argus, chama todo mundo` | todas as 18 seeds |
+| `Argus, chama a galera do design` | Aether · Nexus · Chronos · Canvas · Forge · Quill · Tempo · Threshold · Empath · Skeptic |
+| `Argus, chama todo mundo` | todas as 28 seeds |
